@@ -80,3 +80,22 @@ window.addEventListener("mousedown", function () {
 window.addEventListener("mouseup", function () {
     drawing = false;
 });
+
+// make the code for movile
+window.addEventListener("touchstart", function () {
+    drawing = true;
+});
+
+window.addEventListener("touchend", function () {
+    drawing = false;
+});
+
+window.addEventListener(
+    "touchmove",
+    function (event) {
+        mouse.x = event.touches[0].clientX;
+        mouse.y = event.touches[0].clientY;
+        branchOut();
+    },
+    false
+);
